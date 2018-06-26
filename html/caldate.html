@@ -1,23 +1,105 @@
 <!DOCTYPE html>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<body>
-<div ng-app="myApp" ng-controller="myCtrl"> 
-
-<p>Today's welcome message is:</p>
-<h1>{{myWelcome}}</h1>
-
-</div>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope, $http) {
-    $http.get("https://support.oneskyapp.com/hc/en-us/article_attachments/202761627/example_1.json")
-    .then(function(response) {
-        $scope.myWelcome = response.data;
-    });
-});
-</script>
 
+$( document ).ready(function() {
+	$("#result").hide();
+});
+
+function run(){
+	
+	calculate();
+	
+}
+
+function calculate() {
+	var start = $("#startDD").val() +"/"+$("#startMM").val()+"/"+$("#startYYYY").val();
+	var end = $("#endDD").val() +"/"+$("#endMM").val()+"/"+$("#endYYYY").val();
+
+$.ajax
+({
+    type: "POST",
+    url: 'http://127.0.0.1:8888/duration',
+    dataType: 'json',
+    async: false,
+    data: '{"startdate":"'+start+'","enddate":"'+end+'"}',
+    success: function (result) {
+    	$("#result").show();
+    	$("#from").text(result.from);
+    	$("#to").text(result.to);
+    	$("#totalday0").text(result.totalday);
+    	$("#totalday1").text(result.totalday);
+    	$("#totalday2").text(result.totalday);
+    	$("#humanreadday").text(result.humanreadday);
+    	$("#second").text(result.second);
+    	$("#minute").text(result.minute);
+    	$("#hour").text(result.hour);
+    	$("#week").text(result.week);
+    	$("#percentofyear").text(percentofyear.week);
+    	/*
+    		From          string `json:"from,omitempty"`
+	To            string `json:"to,omitempty"`
+	Totalday      string `json:"totalday,omitempty"`
+	Humanreadday  string `json:"humanreadday,omitempty"`
+	Second        string `json:"second,omitempty"`
+	Minute        string `json:"minute,omitempty"`
+	Hour          string `json:"hour,omitempty"`
+	Week          string `json:"week,omitempty"`
+	Percentofyear string `json:"percentofyear,omitempty"`
+    	*/
+    	
+    }
+})
+}
+</script>
+<body>
+ <form action="#">
+<table>
+	<tr>
+		<td>Start Date :</td>
+		<td>End Date :</td>
+	</tr>
+	<tr>
+		<td><input type="text" value="4" id="startDD" style="width: 30px"> /<input type="text" value="5" id="startMM" style="width: 30px">/<input type="text" value="2018" id="startYYYY" style="width: 80px"></td>
+		<td><input type="text" value="4" id="endDD" style="width: 30px"> /<input type="text" value="5" id="endMM" style="width: 30px">/<input value="2018" type="text" id="endYYYY" style="width: 80px"></td>
+	</tr>
+	<tr>
+		<td colspan="2"> <input type="button" value="Calculate" onclick="run()"> </td>
+	</tr>
+	
+	
+	
+</table>
+
+		<div id="result">
+
+			<div class="row">
+				<div class="eight columns">
+					<p>
+						From and including: <strong><span id="from"/></strong><br>To
+						and including: <strong><span id="to"/></strong>
+					</p>
+					<h2>Result: <span id="totalday0"/> day</h2>
+					<p>
+						It is <span class="bigger"><span id="totalday1"/> </span> day from the start date to the
+						end date, end date included
+					</p>
+				</div>
+				<div class="four columns">
+					<h2 class="mgt0">Alternative time units</h2>
+					<p><span id="humanreadday"/> can be converted to one of these units:</p>
+					<ul>
+						<li><span id="second"/> seconds</li>
+						<li><span id="minute"/> minutes</li>
+						<li><span id="hour"/> hours</li>
+						<li><span id="totalday2"/> day</li>
+						<li><span id="week"/></li>
+						<li><span id="percentofyear"/></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</form>
 </body>
 </html>
