@@ -2,13 +2,23 @@ package api
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 )
 
 func Calculate(w http.ResponseWriter, r *http.Request) {
+	decoder := json.NewDecoder(r.Body)
 
+	var req Request
+	err := decoder.Decode(&req)
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(req.StartDate)
 	var resp Response
-	resp.Humanreadday = "hahah"
+	resp.Humanreadday = req.EndDate
 	json.NewEncoder(w).Encode(resp)
 	return
 }
