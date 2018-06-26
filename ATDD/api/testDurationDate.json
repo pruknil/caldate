@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "d82506ac-90a8-4411-951a-bc2bf6fd056a",
+		"name": "caldate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TC01_4_1_2018_and_4_7_2018",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"startdate\":\"4/1/2018\",\r\n  \"enddate\":\"4/7/2018\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "127.0.0.1:8888/duration",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"duration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC02_11_4_1977_and_27_7_2018",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"startdate\":\"11/4/1977\",\r\n  \"enddate\":\"27/7/2018\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "127.0.0.1:8888/duration",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"duration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC03_19_5_1994_and_26_6_2018",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"startdate\":\"19/5/1994\",\r\n  \"enddate\":\"26/6/2018\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "127.0.0.1:8888/duration",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"duration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TC04_27_5_1976_and_11_4_1977",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"startdate\":\"27/5/1976\",\r\n  \"enddate\":\"11/4/1977\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "127.0.0.1:8888/duration",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8888",
+					"path": [
+						"duration"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
