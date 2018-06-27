@@ -2,7 +2,6 @@ package api
 
 import (
 	"encoding/json"
-	"fmt"
 	"net/http"
 )
 
@@ -16,9 +15,17 @@ func Calculate(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 
-	fmt.Println(req.StartDate)
 	var resp Response
-	resp.Humanreadday = req.EndDate
+	resp.From = "4/1/2018"
+	resp.To = "4/7/2018"
+	resp.Totalday = "182"
+	resp.Humanreadday = "6 months, 1 day"
+	resp.Second = "15,724,800"
+	resp.Minute = "262,080"
+	resp.Hour = "4368"
+	resp.Week = "26"
+	resp.Percentofyear = "49.86"
+
 	json.NewEncoder(w).Encode(resp)
 	return
 }

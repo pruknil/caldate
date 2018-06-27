@@ -1,79 +1,98 @@
 <!DOCTYPE html>
-<html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
+<html lang="en">
 
-$( document ).ready(function() {
-	$("#result").hide();
-});
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>พี่แก๊ปสั่งลุย</title>
+  <!-- Bootstrap core CSS-->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
 
-function run(){
-	
-	calculate();
-	
-}
+</head>
 
-function calculate() {
-	var start = $("#startDD").val() +"/"+$("#startMM").val()+"/"+$("#startYYYY").val();
-	var end = $("#endDD").val() +"/"+$("#endMM").val()+"/"+$("#endYYYY").val();
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="index.html">พี่แก๊ปสั่งลุย</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
 
-$.ajax
-({
-    type: "POST",
-    url: 'http://127.0.0.1:8888/duration',
-    dataType: 'json',
-    async: false,
-    data: '{"startdate":"'+start+'","enddate":"'+end+'"}',
-    success: function (result) {
-    	$("#result").show();
-    	$("#from").text(result.from);
-    	$("#to").text(result.to);
-    	$("#totalday0").text(result.totalday);
-    	$("#totalday1").text(result.totalday);
-    	$("#totalday2").text(result.totalday);
-    	$("#humanreadday").text(result.humanreadday);
-    	$("#second").text(result.second);
-    	$("#minute").text(result.minute);
-    	$("#hour").text(result.hour);
-    	$("#week").text(result.week);
-    	$("#percentofyear").text(percentofyear.week);
-    	/*
-    		From          string `json:"from,omitempty"`
-	To            string `json:"to,omitempty"`
-	Totalday      string `json:"totalday,omitempty"`
-	Humanreadday  string `json:"humanreadday,omitempty"`
-	Second        string `json:"second,omitempty"`
-	Minute        string `json:"minute,omitempty"`
-	Hour          string `json:"hour,omitempty"`
-	Week          string `json:"week,omitempty"`
-	Percentofyear string `json:"percentofyear,omitempty"`
-    	*/
-    	
-    }
-})
-}
-</script>
-<body>
- <form action="#">
-<table>
-	<tr>
-		<td>Start Date :</td>
-		<td>End Date :</td>
-	</tr>
-	<tr>
-		<td><input type="text" value="4" id="startDD" style="width: 30px"> /<input type="text" value="5" id="startMM" style="width: 30px">/<input type="text" value="2018" id="startYYYY" style="width: 80px"></td>
-		<td><input type="text" value="4" id="endDD" style="width: 30px"> /<input type="text" value="5" id="endMM" style="width: 30px">/<input value="2018" type="text" id="endYYYY" style="width: 80px"></td>
-	</tr>
-	<tr>
-		<td colspan="2"> <input type="button" value="Calculate" onclick="run()"> </td>
-	</tr>
-	
-	
-	
-</table>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+          <a class="nav-link" href="caldate.html">
+            <i class="fa fa-fw fa-table"></i>
+            <span class="nav-link-text">Date Calculation</span>
+          </a>
+        </li>
 
-		<div id="result">
 
+
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+
+<form class="needs-validation" novalidate>
+      <div class="row">
+        <div class="col-12">
+			  <div class="form-group row">
+			    <label class="col-sm-2 col-form-label col-form-label-sm">Start Date</label>
+			    <div class="col-sm-1">
+			      <input type="text" value="4" maxlength="2" id="startDD" class="form-control form-control-sm" id="inputEmail3" placeholder="DD" pattern="^(0?[1-9]|[12][0-9]|3[01])$" required>
+			    </div>
+			    <div class="col-sm-1">
+			      <input type="text" value="5" maxlength="2" id="startMM" class="form-control form-control-sm" id="inputEmail3" placeholder="MM" pattern="[1-9]|1[0-2]" required>
+			    </div>
+			    <div class="col-sm-2">
+			      <input type="text" value="2018" maxlength="4" id="startYYYY" class="form-control form-control-sm" id="inputEmail3" placeholder="YYYY" pattern="\d{4}" required>
+			    </div>    
+			  </div>	
+			  
+			  <div class="form-group row">
+			    <label class="col-sm-2 col-form-label col-form-label-sm">End Date</label>
+			    <div class="col-sm-1">
+			      <input type="text" value="4" maxlength="2" id="endDD" class="form-control form-control-sm" id="inputEmail3" placeholder="DD" pattern="^(0?[1-9]|[12][0-9]|3[01])$" required>
+			    </div>
+			    <div class="col-sm-1">
+			      <input type="text" value="5" maxlength="2" id="endMM" class="form-control form-control-sm" id="inputEmail3" placeholder="MM" pattern="[1-9]|1[0-2]" required>
+			    </div>
+			    <div class="col-sm-2">
+			      <input type="text" value="2018" maxlength="4" id="endYYYY" class="form-control form-control-sm" id="inputEmail3" placeholder="YYYY" pattern="\d{4}" required>
+			    </div>    
+			  </div>
+				<div class="form-row">
+					<div class="col-md-6">
+						<input class="btn btn-primary btn-block" type="submit" value="Calculate" >
+					</div>
+				</div>
+        </div>
+      </div>
+</form>      
+
+			<div id="result" style="display: none;">
 			<div class="row">
 				<div class="eight columns">
 					<p>
@@ -99,7 +118,99 @@ $.ajax
 					</ul>
 				</div>
 			</div>
-		</div>
-	</form>
+		</div>      
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © พี่แก๊บสั่งลุย 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    
+<script>
+function calculate() {
+	var start = $("#startDD").val() +"/"+$("#startMM").val()+"/"+$("#startYYYY").val();
+	var end = $("#endDD").val() +"/"+$("#endMM").val()+"/"+$("#endYYYY").val();
+
+$.ajax
+({
+    type: "POST",
+    url: 'duration',
+    dataType: 'json',
+    async: false,
+    data: '{"startdate":"'+start+'","enddate":"'+end+'"}',
+    success: function (result) {
+    	$("#result").show();
+    	$("#from").text(result.from);
+    	$("#to").text(result.to);
+    	$("#totalday0").text(result.totalday);
+    	$("#totalday1").text(result.totalday);
+    	$("#totalday2").text(result.totalday);
+    	$("#humanreadday").text(result.humanreadday);
+    	$("#second").text(result.second);
+    	$("#minute").text(result.minute);
+    	$("#hour").text(result.hour);
+    	$("#week").text(result.week);
+    	$("#percentofyear").text(percentofyear.week);
+   	
+    }
+})
+}
+
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+        	$("#result").hide();
+        	form.classList.add('was-validated');
+        }else{
+        	calculate();
+        }
+        event.preventDefault();
+        event.stopPropagation();
+      }, false);
+    });
+  }, false);
+})();
+</script>    
+  </div>
 </body>
+
 </html>
