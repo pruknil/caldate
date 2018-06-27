@@ -99,7 +99,7 @@
 						From and including: <strong><span id="from"/></strong><br>To
 						and including: <strong><span id="to"/></strong>
 					</p>
-					<h2>Result: <span id="totalday0"/> day</h2>
+					<h2>Result: <span id="totalday0"/> days</h2>
 					<p>
 						It is <span class="bigger"><span id="totalday1"/> </span> day from the start date to the
 						end date, end date included
@@ -174,7 +174,7 @@ $.ajax
     	$("#result").show();
     	$("#from").text(result.from);
     	$("#to").text(result.to);
-    	$("#totalday0").text(result.totalday);
+    	$("#totalday0").text(result.totalday +' days');
     	$("#totalday1").text(result.totalday);
     	$("#totalday2").text(result.totalday);
     	$("#humanreadday").text(result.humanreadday);
