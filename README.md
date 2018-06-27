@@ -23,9 +23,9 @@ datecalculate
 
 ## Test Function
 ### Function Name
-รูปแบบการตั้งชื่อฟังก์ชันเป็นแบบ SNAKE เช่น
+รูปแบบการตั้งชื่อฟังก์ชันเป็นแบบ CAMEL เช่น
 ```
-Test_ActionToTest_Input_152_Should_Be_150
+TestActionToTestInput152ShouldBe150
 ```
 
 ### Parameter Name
