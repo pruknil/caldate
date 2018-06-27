@@ -21,8 +21,8 @@ type Response struct {
 
 func CalDuration(startDate string, endDate string) Response {
 
-	startDateWithoutSlash := RemoveSlashFromStringDate(startDate)
-	endDateWithoutSlash := RemoveSlashFromStringDate(endDate)
+	startDateWithoutSlash := removeSlashFromStringDate(startDate)
+	endDateWithoutSlash := removeSlashFromStringDate(endDate)
 	calculateDayInt := calculateDay(startDateWithoutSlash, endDateWithoutSlash)
 
 	return Response{
