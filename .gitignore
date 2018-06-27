@@ -2,3 +2,7 @@ bin
 pkg
 *.exe
 github.com
+*.png
+log.html
+output.html
+report.html

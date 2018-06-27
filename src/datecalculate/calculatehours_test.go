@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestCallHrInput182Should4368(t *testing.T) {
+func TestCalculateHoursInput182ShouldBe4368Hours(t *testing.T) {
 	expected := "4368 hours"
 	numberOfDay := 182
 	actual := calculateHours(numberOfDay)
