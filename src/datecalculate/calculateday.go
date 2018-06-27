@@ -4,8 +4,7 @@ import (
 	"time"
 )
 
-const hourPerDay = 24
-const includeStartDay = 1
+const INCLUDEING_START_DAY = 1
 
 func calculateDay(startDate string, endDate string) int {
 
@@ -17,5 +16,5 @@ func calculateDay(startDate string, endDate string) int {
 
 	diff := endDateAsTime.Sub(startDateAsTime)
 
-	return (int(diff.Hours()) / hourPerDay) + includeStartDay
+	return (int(diff.Hours()) / HOUR_PER_DAY) + INCLUDEING_START_DAY
 }
