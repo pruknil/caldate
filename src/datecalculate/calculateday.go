@@ -16,5 +16,5 @@ func calculateDay(startDate string, endDate string) int {
 
 	diff := endDateAsTime.Sub(startDateAsTime)
 
-	return (int(diff.Hours()) / HOUR_PER_DAY) + INCLUDEING_START_DAY
+	return (int(diff.Hours()) / HOURS_PER_DAY) + INCLUDEING_START_DAY
 }
