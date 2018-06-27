@@ -11,5 +11,5 @@ const SECOND_PER_MINUTE = 60
 
 func calculateSecond(days int) string {
 	seconds := strconv.Itoa(days*HOUR_PER_DAY*MINUTE_PER_HOUR*SECOND_PER_MINUTE)
-	return fmt.Sprintf("%s Seconds",formatNumber(seconds))
+	return fmt.Sprintf("%s seconds",formatNumber(seconds))
 }

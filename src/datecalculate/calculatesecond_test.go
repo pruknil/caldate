@@ -4,7 +4,7 @@ import "testing"
 
 func TestCalculateSecond182Shouldbe15724800(t *testing.T) {
 	days := 182
-	expexted := "15,724,800 Seconds"
+	expexted := "15,724,800 seconds"
 
 	actual := calculateSecond(days)
 	if expexted != actual {
