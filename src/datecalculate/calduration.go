@@ -26,14 +26,13 @@ func CalDuration(startDate string, endDate string) Response {
 	calculateDayInt := calculateDay(startDateWithoutSlash, endDateWithoutSlash)
 
 	return Response{
-		From:          FormatDate(startDateWithoutSlash),
-		To:            FormatDate(endDateWithoutSlash),
-		Totalday:      fmt.Sprintf("%d", calculateDayInt),
-		Humanreadday:  "6 months, 1 day",
-		Second:        calculateSecond(calculateDayInt),
-		Minute:        calculateMinutes(calculateDayInt),
-		Hour:          calculateHours(calculateDayInt),
-		Week:          calculateWeek(calculateDayInt),
-		Percentofyear: "49.86% of 2018",
+		From:         FormatDate(startDateWithoutSlash),
+		To:           FormatDate(endDateWithoutSlash),
+		Totalday:     fmt.Sprintf("%d", calculateDayInt),
+		Humanreadday: calculateTotalYMD(startDateWithoutSlash, endDateWithoutSlash),
+		Second:       calculateSecond(calculateDayInt),
+		Minute:       calculateMinutes(calculateDayInt),
+		Hour:         calculateHours(calculateDayInt),
+		Week:         calculateWeek(calculateDayInt),
 	}
 }
