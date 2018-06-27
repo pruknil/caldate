@@ -1,109 +1,90 @@
 {
-	"info": {
-		"_postman_id": "d82506ac-90a8-4411-951a-bc2bf6fd056a",
-		"name": "caldate",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
+	"id": "8a4d5a0f-c431-98ee-0f9d-75b724de3689",
+	"name": "caldate",
+	"description": "",
+	"order": [
+		"5d497868-6bd7-70ac-af06-5d105d7e661f",
+		"d6b73b40-1158-cf2c-6975-722a68b97385",
+		"a2e26953-964b-8974-4ecf-998c3497cf5c",
+		"b3fc2908-8a83-5a1b-57a0-862dc225116c"
+	],
+	"folders_order": [],
+	"folders": [],
+	"owner": "4206833",
+	"hasRequests": true,
+	"requests": [
 		{
+			"id": "5d497868-6bd7-70ac-af06-5d105d7e661f",
+			"headers": "",
+			"headerData": [],
+			"url": "127.0.0.1:8888/duration",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "var jsonData = JSON.parse(responseBody);\n\ntests[\"from value\"] = jsonData.from === \"4/1/2018\";\ntests[\"to value\"] = jsonData.to === \"4/7/2018\";\ntests[\"totalday value\"] = jsonData.totalday === \"182\";\ntests[\"humanreadday value\"] = jsonData.humanreadday === \"6 months, 1 day\";\ntests[\"second value\"] = jsonData.second ===  \"15,724,800\";\ntests[\"minute value\"] = jsonData.minute === \"262,080\";\ntests[\"hour value\"] = jsonData.hour ===  \"4368\";\ntests[\"week value\"] = jsonData.week ===  \"26\";\ntests[\"percentofyear value\"] = jsonData.percentofyear === \"49.86\";\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1530075039392,
 			"name": "TC01_4_1_2018_and_4_7_2018",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"startdate\":\"4/1/2018\",\r\n  \"enddate\":\"4/7/2018\"\r\n}\r\n"
-				},
-				"url": {
-					"raw": "127.0.0.1:8888/duration",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8888",
-					"path": [
-						"duration"
-					]
-				}
-			},
-			"response": []
+			"description": "",
+			"collectionId": "8a4d5a0f-c431-98ee-0f9d-75b724de3689",
+			"responses": [],
+			"rawModeData": "{\r\n  \"startdate\":\"4/1/2018\",\r\n  \"enddate\":\"4/7/2018\"\r\n}\r\n"
 		},
 		{
-			"name": "TC02_11_4_1977_and_27_7_2018",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"startdate\":\"11/4/1977\",\r\n  \"enddate\":\"27/7/2018\"\r\n}\r\n"
-				},
-				"url": {
-					"raw": "127.0.0.1:8888/duration",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8888",
-					"path": [
-						"duration"
-					]
-				}
-			},
-			"response": []
-		},
-		{
+			"id": "a2e26953-964b-8974-4ecf-998c3497cf5c",
 			"name": "TC03_19_5_1994_and_26_6_2018",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"startdate\":\"19/5/1994\",\r\n  \"enddate\":\"26/6/2018\"\r\n}\r\n"
-				},
-				"url": {
-					"raw": "127.0.0.1:8888/duration",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8888",
-					"path": [
-						"duration"
-					]
-				}
-			},
-			"response": []
+			"description": "",
+			"collectionId": "8a4d5a0f-c431-98ee-0f9d-75b724de3689",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\r\n  \"startdate\":\"19/5/1994\"\r\n  \"enddate\":\"26/6/2018\"\r\n}\r\n",
+			"url": "127.0.0.1:8888/duration",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "8a4d5a0f-c431-98ee-0f9d-75b724de3689"
 		},
 		{
+			"id": "b3fc2908-8a83-5a1b-57a0-862dc225116c",
 			"name": "TC04_27_5_1976_and_11_4_1977",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"startdate\":\"27/5/1976\",\r\n  \"enddate\":\"11/4/1977\"\r\n}\r\n"
-				},
-				"url": {
-					"raw": "127.0.0.1:8888/duration",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8888",
-					"path": [
-						"duration"
-					]
-				}
-			},
-			"response": []
+			"description": "",
+			"collectionId": "8a4d5a0f-c431-98ee-0f9d-75b724de3689",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\r\n  \"startdate\":\"27/5/1976\"\r\n  \"enddate\":\"11/4/1977\"\r\n}\r\n",
+			"url": "127.0.0.1:8888/duration",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "8a4d5a0f-c431-98ee-0f9d-75b724de3689"
+		},
+		{
+			"id": "d6b73b40-1158-cf2c-6975-722a68b97385",
+			"name": "TC02_11_4_1977_and_27_7_2018",
+			"description": "",
+			"collectionId": "8a4d5a0f-c431-98ee-0f9d-75b724de3689",
+			"method": "POST",
+			"headers": "",
+			"dataMode": "raw",
+			"data": [],
+			"rawModeData": "{\r\n  \"startdate\":\"11/4/1977\"\r\n  \"enddate\":\"27/7/2018\"\r\n}\r\n",
+			"url": "127.0.0.1:8888/duration",
+			"responses": [],
+			"pathVariableData": [],
+			"queryParams": [],
+			"headerData": [],
+			"collection_id": "8a4d5a0f-c431-98ee-0f9d-75b724de3689"
 		}
 	]
 }
