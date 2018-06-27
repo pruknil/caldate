@@ -1,9 +1,12 @@
 package datecalculate
 
-import "strconv"
+import (
+	"fmt"
+)
 
-func CalculateHours(daynumber int) string {
+const HOURS_PER_DAY  = 24
 
-	numberofHr := strconv.Itoa(daynumber * 24)
-	return (numberofHr)
+func calculateHours(daynumber int) string {
+
+	return fmt.Sprintf("%d hours",daynumber * HOURS_PER_DAY)
 }
