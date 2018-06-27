@@ -112,12 +112,12 @@ durationDate
 ### ค่าสั่ง Run Acceptance Test (Robot)
 
 ```
-robot duration.robot
+robot caldate.robot
 ```
 
 ### คำสั่ง Run Acceptance Test (API)
 ```
-newman run filename
+newman run testDurationDate.json
 ```
 
 ## Additional
