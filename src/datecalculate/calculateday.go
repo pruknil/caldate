@@ -18,3 +18,4 @@ func calculateDay(startDate string, endDate string) int {
 
 	return (int(diff.Hours()) / HOURS_PER_DAY) + INCLUDEING_START_DAY
 }
+
