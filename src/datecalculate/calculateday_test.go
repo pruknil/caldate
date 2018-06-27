@@ -7,7 +7,7 @@ func TestDayNumShouldbe182(t *testing.T){
 	enddate := "04072018"
 	expected := 182
 
-	actual := dayNum(startdate,enddate)
+	actual := calculateDay(startdate,enddate)
 
 	if expected != actual {
 		t.Errorf("Expected %d Actual %d",expected,actual)

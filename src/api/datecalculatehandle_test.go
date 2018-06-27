@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http/httptest"
+	"strings"
 	"testing"
 )
 
@@ -33,8 +34,8 @@ func TestDurationInput412018And472018ShouldbeJSON(t *testing.T) {
 	}
 	expectedResponseString, _ := json.Marshal(expectedResponse)
 
-	if string(actual) != string(expectedResponseString) {
-		t.Errorf("expected %s but got %s", expectedResponseString, actual)
+	if strings.TrimSpace(string(actual)) != strings.TrimSpace(string(expectedResponseString)) {
+		t.Errorf("expected '%s' but got '%s'", actual, expectedResponseString)
 	}
 
 }
