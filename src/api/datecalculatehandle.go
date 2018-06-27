@@ -6,20 +6,6 @@ import (
 	"net/http"
 )
 
-func Calculate(w http.ResponseWriter, r *http.Request) {
-	decoder := json.NewDecoder(r.Body)
-
-	var req Request
-	err := decoder.Decode(&req)
-
-	if err != nil {
-		panic(err)
-	}
-	resp := datecalculate.CalDuration(req.StartDate, req.EndDate)
-	json.NewEncoder(w).Encode(resp)
-	return
-}
-
 type Request struct {
 	StartDate string `json:"startdate,omitempty"`
 	EndDate   string `json:"enddate,omitempty"`
@@ -35,4 +21,19 @@ type Response struct {
 	Hour          string `json:"hour,omitempty"`
 	Week          string `json:"week,omitempty"`
 	Percentofyear string `json:"percentofyear,omitempty"`
+}
+
+func Calculate(w http.ResponseWriter, r *http.Request) {
+	decoder := json.NewDecoder(r.Body)
+
+	var req Request
+	err := decoder.Decode(&req)
+
+	if err != nil {
+		panic(err)
+	}
+	resp := datecalculate.CalDuration(req.StartDate, req.EndDate)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(resp)
+	return
 }
