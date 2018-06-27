@@ -13,7 +13,7 @@ func FormatDate(inputDate string) string {
 	return fmt.Sprintf("%v, %v %v %v", date.Weekday(), date.Day(), date.Month(), date.Year())
 }
 
-func convertDate(inputDate string) (int, int, int) {
+func  convertDate(inputDate string) (int, int, int) {
 	day, _ := strconv.Atoi(inputDate[0:2])
 	month, _ := strconv.Atoi(inputDate[2:4])
 	year, _ := strconv.Atoi(inputDate[4:8])
