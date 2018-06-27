@@ -102,17 +102,17 @@
 					<h2>Result: <span id="totalday0"/> days</h2>
 					<p>
 						It is <span class="bigger"><span id="totalday1"/> </span> day from the start date to the
-						end date, end date included
+						end date, end date included Or <span id="humanreadday"/>
 					</p>
 				</div>
 				<div class="four columns">
 					<h2 class="mgt0">Alternative time units</h2>
-					<p><span id="humanreadday"/> can be converted to one of these units:</p>
+					<p><span id="totalday2"/> can be converted to one of these units:</p>
 					<ul>
 						<li><span id="second"/> seconds</li>
 						<li><span id="minute"/> minutes</li>
 						<li><span id="hour"/> hours</li>
-						<li><span id="totalday2"/></li>
+						<li><span id="totalday3"/></li>
 						<li><span id="week"/></li>
 					</ul>
 				</div>
@@ -177,6 +177,7 @@ $.ajax
     	$("#totalday0").text(result.totalday +' days');
     	$("#totalday1").text(result.totalday);
     	$("#totalday2").text(result.totalday +' days');
+    	$("#totalday3").text(result.totalday +' days');
     	$("#humanreadday").text(result.humanreadday);
     	$("#second").text(result.second);
     	$("#minute").text(result.minute);
