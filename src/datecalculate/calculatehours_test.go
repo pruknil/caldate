@@ -13,3 +13,4 @@ func TestCalculateHoursInput182ShouldBe4368Hours(t *testing.T) {
 	}
 
 }
+
