@@ -26,6 +26,7 @@ func Calculate(w http.ResponseWriter, r *http.Request) {
 	resp.Week = "26"
 	resp.Percentofyear = "49.86"
 
+	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(resp)
 	return
 }
