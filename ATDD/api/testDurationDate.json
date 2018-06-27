@@ -6,12 +6,13 @@
 		"5d497868-6bd7-70ac-af06-5d105d7e661f",
 		"d6b73b40-1158-cf2c-6975-722a68b97385",
 		"a2e26953-964b-8974-4ecf-998c3497cf5c",
-		"b3fc2908-8a83-5a1b-57a0-862dc225116c"
+		"b6370a02-d8cc-1d64-73bc-d1c92f3c88e9"
 	],
-	"folders_order": [],
 	"folders": [],
+	"folders_order": [],
+	"timestamp": 0,
 	"owner": "4206833",
-	"hasRequests": true,
+	"public": false,
 	"requests": [
 		{
 			"id": "5d497868-6bd7-70ac-af06-5d105d7e661f",
@@ -37,8 +38,15 @@
 		},
 		{
 			"id": "a2e26953-964b-8974-4ecf-998c3497cf5c",
-			"headers": "",
-			"headerData": [],
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
 			"url": "127.0.0.1:8888/duration",
 			"queryParams": [],
 			"preRequestScript": null,
@@ -50,7 +58,7 @@
 			"tests": "var jsonData = JSON.parse(responseBody);\n\ntests[\"from value\"] = jsonData.from === \"Thursday, 19 May 1994\";\ntests[\"to value\"] = jsonData.to === \"Tuesday, 26 June 2018\";\ntests[\"totalday value\"] = jsonData.totalday === \"8805 days\";\ntests[\"humanreadday value\"] = jsonData.humanreadday === \"24 years, 1 month, 8 days\";\ntests[\"second value\"] = jsonData.second ===  \"760,752,000 seconds\";\ntests[\"minute value\"] = jsonData.minute === \"12,679,200 minutes\";\ntests[\"hour value\"] = jsonData.hour ===  \"211,320 hours\";\ntests[\"week value\"] = jsonData.week ===  \"1257 weeks and 6 days\";\n//tests[\"percentofyear value\"] = jsonData.percentofyear === \"49.86\";\n",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1530081392758,
+			"time": 1530081735042,
 			"name": "TC03_19_5_1994_and_26_6_2018",
 			"description": "",
 			"collectionId": "8a4d5a0f-c431-98ee-0f9d-75b724de3689",
@@ -58,9 +66,16 @@
 			"rawModeData": "{\r\n  \"startdate\":\"19/5/1994\",\r\n  \"enddate\":\"26/6/2018\"\r\n}\r\n"
 		},
 		{
-			"id": "b3fc2908-8a83-5a1b-57a0-862dc225116c",
-			"headers": "",
-			"headerData": [],
+			"id": "b6370a02-d8cc-1d64-73bc-d1c92f3c88e9",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
 			"url": "127.0.0.1:8888/duration",
 			"queryParams": [],
 			"preRequestScript": null,
@@ -69,10 +84,11 @@
 			"method": "POST",
 			"data": [],
 			"dataMode": "raw",
-			"tests": null,
+			"version": 2,
+			"tests": "var jsonData = JSON.parse(responseBody);\n\ntests[\"from value\"] = jsonData.from === \"Thursday, 27 May 1976\";\ntests[\"to value\"] = jsonData.to === \"Monday, 11 April 1977\";\ntests[\"totalday value\"] = jsonData.totalday === \"320 days\";\ntests[\"humanreadday value\"] = jsonData.humanreadday === \"10 months, 16 days\";\ntests[\"second value\"] = jsonData.second ===  \"27,648,000 seconds\";\ntests[\"minute value\"] = jsonData.minute === \"460,800 minutes\";\ntests[\"hour value\"] = jsonData.hour ===  \"7680 hours\";\ntests[\"week value\"] = jsonData.week ===  \"45 weeks and 5 days\";\n//tests[\"percentofyear value\"] = jsonData.percentofyear === \"49.86\";\n",
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1530081416598,
+			"time": 1530082203531,
 			"name": "TC04_27_5_1976_and_11_4_1977",
 			"description": "",
 			"collectionId": "8a4d5a0f-c431-98ee-0f9d-75b724de3689",
