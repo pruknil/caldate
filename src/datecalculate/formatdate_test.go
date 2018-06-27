@@ -12,3 +12,14 @@ func TestFormatDateInput04012018ShouldBeThursday4January2018(t *testing.T) {
 		t.Errorf("expected %s but got %s", expected, actualDate)
 	}
 }
+
+func TestFormatDateInput04072018ShouldBeWednesday4July2018(t *testing.T) {
+	expected := "Wednesday, 4 July 2018"
+	startDate := "04072018"
+
+	actualDate := FormatDate(startDate)
+
+	if actualDate != expected {
+		t.Errorf("expected %s but got %s", expected, actualDate)
+	}
+}

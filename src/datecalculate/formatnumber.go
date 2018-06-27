@@ -1,13 +1,14 @@
 package datecalculate
 
+const MONEY_SEPERATOR = 3
 
 func formatNumber(number string) string {
 
-	if len(number) <= 3 {
+	if len(number) <= MONEY_SEPERATOR {
 		return number
 	} else {
 
-		return formatNumber( number[0:len(number)-3] ) + "," + number[len(number)-3:]
+		return formatNumber( number[0:len(number)-MONEY_SEPERATOR] ) + "," + number[len(number)-MONEY_SEPERATOR:]
 	}
 
 }

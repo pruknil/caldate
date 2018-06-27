@@ -1,6 +1,6 @@
 *** Settings ***
 Library           SeleniumLibrary
-
+Test Teardown    Close Browser
 
 *** Variables ***
 ${SERVER}         http://localhost:8888/caldate.html
@@ -13,6 +13,7 @@ Test calculate
     Input fromdate and todate
     press calculate button
     display result
+    Close web
 
 
 *** Keywords ***
@@ -39,4 +40,3 @@ display result
     Wait Until Page Contains    4368 hours
     Wait Until Page Contains    26 weeks
     Wait Until Page Contains    49.86% of 2018
-    
