@@ -8,7 +8,7 @@ func formatNumber(number string) string {
 		return number
 	} else {
 
-		return formatNumber( number[0:len(number)-MONEY_SEPERATOR] ) + "," + number[len(number)-MONEY_SEPERATOR:]
+		return formatNumber(number[0:len(number)-MONEY_SEPERATOR]) + "," + number[len(number)-MONEY_SEPERATOR:]
 	}
 
 }

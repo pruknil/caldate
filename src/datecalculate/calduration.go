@@ -28,7 +28,7 @@ func CalDuration(startDate string, endDate string) Response {
 	return Response{
 		From:         FormatDate(startDateWithoutSlash),
 		To:           FormatDate(endDateWithoutSlash),
-		Totalday:     fmt.Sprintf("%d", calculateDayInt),
+		Totalday:     formatNumber(fmt.Sprintf("%d", calculateDayInt)),
 		Humanreadday: calculateTotalYMD(startDateWithoutSlash, endDateWithoutSlash),
 		Second:       calculateSecond(calculateDayInt),
 		Minute:       calculateMinutes(calculateDayInt),
